@@ -6,7 +6,7 @@
   /* eslint no-console: 0 */
 
   import utils from '../utils'
-  import { zonedTimeToUtc, utcToZonedTime, format } from "date-fns-tz";
+  import { utcToZonedTime } from "date-fns-tz";
 
   export default {
     name: 'ConcertoClientTime',
