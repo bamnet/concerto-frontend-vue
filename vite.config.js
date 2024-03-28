@@ -1,14 +1,22 @@
 import { defineConfig } from 'vite'
-import { createVuePlugin as vue } from "vite-plugin-vue2";
+import createVuePlugin from '@vitejs/plugin-vue'
 import autoprefixer from 'autoprefixer';
 
 // https://vitejs.dev/config/
 const path = require("path");
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [createVuePlugin({
+    template: {
+      compilerOptions: {
+        compatConfig: {
+          MODE: 2
+        }
+      }
+    }
+  })],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+        vue: '@vue/compat'
     },
   },
   css: {

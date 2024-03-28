@@ -6,9 +6,9 @@
     @concertotick="concertoTicked"
   >
     <div v-if="debug" class="debug-field" :title="debugFieldTitle">Field {{field.id }} - {{field.name}}</div>
-      <transition name="custom-classes-transition" :enter-active-class="transitionIn" :leave-active-class="transitionOut">
+      <transition-group name="custom-classes-transition" :enter-active-class="transitionIn" :leave-active-class="transitionOut">
         <component v-for="content in currentContent" :key="content.contentId" v-bind:is="contentType" :content="content" :style="field.style" ></component>
-      </transition>
+      </transition-group>
     <div v-if="debug" class="debug-field-status">{{status}}</div>
     <div v-if="debug" class="debug-field-duration">{{ inInfo }}{{duration}}{{ outInfo }}</div>
   </div>
