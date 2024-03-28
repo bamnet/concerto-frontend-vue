@@ -20,13 +20,13 @@
   import axios from 'axios'
   import utils from '../utils'
 
-  import ConcertoClientTime from "./ConcertoClientTime"
-  import ConcertoEmpty from "./ConcertoEmpty"
-  import ConcertoGraphic from "./ConcertoGraphic"
-  import ConcertoHtmlText from "./ConcertoHtmlText"
-  import ConcertoIframe from "./ConcertoIframe"
-  import ConcertoRemoteVideo from "./ConcertoRemoteVideo"
-  import ConcertoTicker from "./ConcertoTicker"
+  import ConcertoClientTime from "./ConcertoClientTime.vue"
+  import ConcertoEmpty from "./ConcertoEmpty.vue"
+  import ConcertoGraphic from "./ConcertoGraphic.vue"
+  import ConcertoHtmlText from "./ConcertoHtmlText.vue"
+  import ConcertoIframe from "./ConcertoIframe.vue"
+  import ConcertoRemoteVideo from "./ConcertoRemoteVideo.vue"
+  import ConcertoTicker from "./ConcertoTicker.vue"
 
   export default {
     name: 'ConcertoField',

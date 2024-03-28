@@ -6,8 +6,7 @@
   /* eslint no-console: 0 */
 
   import utils from '../utils'
-  import moment from 'moment'
-  import momentTimezone from 'moment-timezone'
+  import { zonedTimeToUtc, utcToZonedTime, format } from "date-fns-tz";
 
   export default {
     name: 'ConcertoClientTime',
@@ -36,7 +35,7 @@
       formatted() {
         let tz = this.content.timezone
         let format = this.content.config["time_format"] || "MM/DD/YY <br/> hh:mm A"
-        let now = tz ? moment().tz(tz) : moment()
+        let now = tz ? utcToZonedTime(Date.now(), tz) :  Date.now()
         let locale = this.content.locale
         now = locale ? now.locale(locale) : now
         this.datetime = now.format(format)
