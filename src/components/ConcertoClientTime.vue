@@ -6,7 +6,7 @@
   /* eslint no-console: 0 */
 
   import utils from '../utils'
-  import { utcToZonedTime } from "date-fns-tz";
+  import { utcToZonedTime, format } from "date-fns-tz";
 
   export default {
     name: 'ConcertoClientTime',
@@ -34,11 +34,14 @@
 
       formatted() {
         let tz = this.content.timezone
-        let format = this.content.config["time_format"] || "MM/DD/YY <br/> hh:mm A"
-        let now = tz ? utcToZonedTime(Date.now(), tz) :  Date.now()
+        let formatSpec = this.content.config["time_format"] || "MM/DD/YY '<br/>' hh:mm a"
+        let now = tz ? utcToZonedTime(Date.now(), tz) : new Date()
         let locale = this.content.locale
         now = locale ? now.locale(locale) : now
-        this.datetime = now.format(format)
+        this.datetime = format(now, formatSpec, {
+          useAdditionalDayOfYearTokens: true,
+          useAdditionalWeekYearTokens: true,
+        })
 
         // place in the event loop so the value can get rendered in the element before we resize it
         if (this.content && this.content.config && this.content.config['disable_text_autosize'] === '1') {
