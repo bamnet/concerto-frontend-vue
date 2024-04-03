@@ -1,0 +1,4 @@
+[
+    {"id":2,"name":"Test","duration":10,"type":"Ticker","render_details":{"data":"\u003cp\u003eThis is sample test\u003c/p\u003e\n"}},
+    {"id":21,"name":"Test","duration":5,"type":"Ticker","render_details":{"data":"\u003cp\u003eOther Sample Text for Ticker\u003c/p\u003e\n"}}
+]

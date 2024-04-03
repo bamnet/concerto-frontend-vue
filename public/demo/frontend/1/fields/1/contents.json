@@ -1,0 +1,5 @@
+[
+    {"id":1,"name":"Sample Screenshot","duration":10,"type":"Graphic","render_details":{"path":"landscape_1.jpg"}},
+    {"id":2,"name":"Sample Screenshot","duration":8,"type":"Graphic","render_details":{"path":"landscape_2.jpg"}},
+    {"id":3,"name":"Sample Screenshot","duration":12,"type":"Graphic","render_details":{"path":"landscape_3.jpg"}}
+]
